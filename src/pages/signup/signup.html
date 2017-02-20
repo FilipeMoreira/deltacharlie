@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cadastro
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list no-lines>
+        <ion-item>
+            <ion-input type="text" placeholder='Nome'></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="email" placeholder='Email'></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="text" placeholder='Celular'></ion-input>
+        </ion-item>
+        <ion-item>
+        	<div class='text-center'>
+				O que você é?
+			</div>
+		</ion-item>
+        <ion-item>
+			<ion-label>Aluno</ion-label>
+			<ion-checkbox checked="false"></ion-checkbox>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Professor</ion-label>
+			<ion-checkbox checked="false" (click)="onFieldChange()"></ion-checkbox>
+		</ion-item>
+
+		<div *ngIf="isProfessor == true">
+
+            <ion-list>
+			  <ion-item>
+			    <ion-label>Instrumento</ion-label>
+			    <ion-select multiple='true'>
+			      <ion-option value="guitar">Guitarra</ion-option>
+			      <ion-option value="bass">Baixo</ion-option>
+			      <ion-option value="drums">Bateria</ion-option>
+			      <ion-option value="acoustic-guitar">Violão</ion-option>
+			      <ion-option value="violin">Violino</ion-option>
+			      <ion-option value="piano">Piano</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+		</div>
+
+		<ion-item>
+            <ion-input type="password" placeholder='Senha'></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="password" placeholder='Confimar Senha'></ion-input>
+        </ion-item>
+
+    </ion-list>
+    <div class='text-center'>
+        <button ion-button medium round>Cadastrar</button>
+    </div>
+</ion-content>
